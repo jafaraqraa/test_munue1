@@ -42,9 +42,11 @@ const content = {
     ],
     categories: [
       { name: 'BURGERS', icon: '🍔', color: 'bg-category-burgers' },
-      { name: 'PIZZAS', icon: '🍕', color: 'bg-category-pizzas' },
+      { name: 'PIZZA', icon: '🍕', color: 'bg-category-pizzas' },
+      { name: 'SHAWARMA', icon: '🌯', color: 'bg-category-shawarma' },
       { name: 'SALADS', icon: '🥗', color: 'bg-category-salads' },
       { name: 'DRINKS', icon: '🥤', color: 'bg-category-drinks' },
+      { name: 'DESSERTS', icon: '🍰', color: 'bg-category-desserts' },
     ],
     offers: [
       {
@@ -104,8 +106,10 @@ const content = {
     categories: [
       { name: 'برجر', icon: '🍔', color: 'bg-category-burgers' },
       { name: 'بيتزا', icon: '🍕', color: 'bg-category-pizzas' },
+      { name: 'شاورما', icon: '🌯', color: 'bg-category-shawarma' },
       { name: 'سلطات', icon: '🥗', color: 'bg-category-salads' },
       { name: 'مشروبات', icon: '🥤', color: 'bg-category-drinks' },
+      { name: 'حلويات', icon: '🍰', color: 'bg-category-desserts' },
     ],
     offers: [
       {
@@ -270,15 +274,15 @@ export default function App() {
         {/* Categories Section */}
         <section className="px-5">
           <h2 className="mb-5 text-2xl font-extrabold text-slate-900 font-display">{t.categoriesTitle}</h2>
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-2 gap-x-4 gap-y-5">
             {t.categories.map((category) => (
               <motion.button
                 key={category.name}
                 whileTap={{ scale: 0.97 }}
-                className={`flex flex-col items-center justify-center rounded-[32px] ${category.color} py-7 transition-all`}
+                className={`flex flex-col items-center justify-center rounded-[40px] ${category.color} py-8 transition-all`}
               >
-                <span className="text-4xl mb-3 transform scale-125">{category.icon}</span>
-                <span className="text-xs font-bold text-slate-900 tracking-widest uppercase">{category.name}</span>
+                <span className="text-4xl mb-4 transform scale-110">{category.icon}</span>
+                <span className="text-[11px] font-black text-slate-900 tracking-[0.15em] uppercase">{category.name}</span>
               </motion.button>
             ))}
           </div>
