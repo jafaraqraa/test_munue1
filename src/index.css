@@ -2,15 +2,34 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  @apply bg-background text-slate-900;
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+@layer base {
+  body {
+    @apply bg-white text-slate-900 antialiased selection:bg-blue-100 selection:text-blue-900;
+    font-family: 'Manrope', system-ui, -apple-system, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  }
 }
 
-.no-scrollbar::-webkit-scrollbar {
-  display: none;
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 }
-.no-scrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+
+/* Smooth transitions for all interactive elements */
+button, a {
+  @apply transition-all duration-200;
+}
+
+/* Custom scroll behavior */
+html {
+  scroll-behavior: smooth;
 }
